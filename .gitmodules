@@ -1,5 +1,5 @@
 [submodule "bin"]
-	path = bin
+	path = scripts
 	url = git@github.com:baineng/dot-scripts.git
 [submodule ".emacs.d"]
 	path = .emacs.d
