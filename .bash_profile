@@ -1,5 +1,5 @@
 # Add 'bin' to the '$PATH'
-export PATH="$HOME/scripts:$PATH";
+export PATH="$HOME/.scripts:$PATH";
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.

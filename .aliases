@@ -9,10 +9,9 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
+alias p="cd ~/Projects"
 alias g="git"
 
 # Detect which `ls` flavor is in use
@@ -149,3 +148,26 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# Set Emacs aliases
+if [ ! -z "$INSIDE_EMACS" ]
+then
+    precmd() {
+        echo -e "\eAnSiTu" "$LOGNAME"
+        echo -e "\eAnSiTc" "$(pwd)"
+        echo -e "\eAnSiTh" "$(hostname -f)"
+    }
+
+    alias e='print -P "\eAnSiTe"'
+    alias x='print -P "\eAnSiTx"'
+    alias g='print -P "\eAnSiTg"'
+else
+    alias e='emacsclient -nq'
+    # alias vim='emacsclient -nq'
+    alias em='emacsclient -nq -e "(mu4e)"'
+    alias eg='emacsclient -nq -e "(magit-status \"${pwd}\")"'
+fi
+
+# Set git aliases
+alias gs='git status'
+alias gd='git diff'

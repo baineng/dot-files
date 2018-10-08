@@ -26,7 +26,7 @@
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
-	branches = branch -a
+	branches = branch -av
 	remotes = remote -v
 
 	# List aliases
@@ -189,4 +189,4 @@
 [user]
 
     name  = benn
-    email = benn.msg@gmail.com
+    email = benn@thenetcircle.com
