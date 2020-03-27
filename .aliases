@@ -13,6 +13,8 @@ alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias p="cd ~/Projects"
 alias g="git"
+alias gs="git status --show-stash"
+alias gb="git branch"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -167,7 +169,3 @@ else
     alias em='emacsclient -nq -e "(mu4e)"'
     alias eg='emacsclient -nq -e "(magit-status \"${pwd}\")"'
 fi
-
-# Set git aliases
-alias gs='git status'
-alias gd='git diff'

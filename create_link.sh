@@ -12,10 +12,15 @@ if [ -z $dotfilesDir ]; then
 fi
 
 for file in `ls -a $dotfilesDir`; do
-    if [ -d $file -a $file = '.emacs.d' -o $file = '.scripts' ] || \
+    if [ -d $file \
+         -a $file = '.emacs.d' \
+         -o $file = '.scripts' \
+         -o $file = '.ssh' ] \
+       || \
        [ -f $file \
          -a ! $file = '.gitmodules' \
          -a ! $file = '.gitignore' \
+         -a ! $file = '.extra' \
          -a ${file:0:1} = '.' ]; then
 
         if [ -e $HOME/$file ]; then

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+remoteHost="$1"
+remoteJmxPort="$2"
+
+if [ "$remoteHost" = "" ] || [ "$remoteJmxPort" = "" ] ; then
+    echo "      usage: jconsole-with-local-proxy \$remoteHost $remoteJmxPort"
+    exit 1
+fi
+
+jconsole -J-DsocksProxyHost=localhost -J-DsocksProxyPort=10086 service:jmx:rmi:///jndi/rmi://$remoteHost:$remoteJmxPort/jmxrmi
