@@ -4,7 +4,7 @@ export PATH="$HOME/.scripts:$PATH";
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-if [ ! -z "$INSIDE_EMACS" ]; then
+if [ ! -z "$INSIDE_EMACS" ] || [ "$TERM" == "dumb" ]; then
   loadfiles=( ~/.{common_exports,aliases,functions,extra} )
 else
   loadfiles=( ~/.{bash_prompt,common_exports,aliases,functions,extra} )

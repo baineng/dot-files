@@ -25,3 +25,8 @@ export MANPAGER='less -X';
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
+
+# To prevent Python to create .pyc file
+# This command help to remove existed pyc/pyo files
+# $ find . -type f -name "*.py[co]" -delete -or -type d -name "__pycache__" -delete
+export PYTHONDONTWRITEBYTECODE=1
